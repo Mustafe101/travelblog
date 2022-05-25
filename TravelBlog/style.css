@@ -3,7 +3,7 @@ body{
     padding: 0%;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 40vh 10vh 140vh auto 60vh 40vh 20vh;
+    grid-template-rows: 40vh 10vh 109vh auto 60vh 45vh 25vh;
     grid-template-areas: "header header"
                           "navbar navbar"
                           "bali bali"
@@ -36,15 +36,16 @@ nav{
 .photo{
     display: flex;
     background: url(img/beach.jpg);
-    background-position: bottom ;
+    background-position: center ;
     flex-direction: column;
     color: white;
     width: 100%;
-    height:60vh;
     align-items: center;
-    
     background-size: 100%;
     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
 }
 
 .photo svg{
@@ -54,11 +55,11 @@ nav{
 }
 
 h1{
-    
     margin-bottom: 10px;
     font-size: 3rem;
-    z-index: 1  ;
+    z-index: 1;
     font-family: 'RocknRoll One', sans-serif;
+    
 }
 
 
@@ -69,19 +70,9 @@ h1{
     z-index: 1;
 }
 
-.filter{
-    background: linear-gradient(to right, #2b80b9, #f2f7ba);
-    width: 100%;
-    height: 100%;
-    opacity: .4;
-    position: absolute;
-}
-
 
 .menu{
     display: flex;
-    
-    
     align-items: center;
     justify-content: space-evenly;
     background-color: beige;
@@ -112,7 +103,75 @@ h1{
     font-size: 18px;
     letter-spacing: 0.5px;
     margin-left: 100px;
+    transition: 1s;
 }
+
+.menu ul li a:hover{
+    color: #0f5a8b;
+    transition-duration: 0.5s .5s;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+
+@media (max-width:768px) {
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu{
+        position: fixed;
+        left: -200%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #f2f7ba;
+        width: 100%;
+        text-align: center;
+        transition:0.3s;
+    }
+
+    .nav-link{
+        margin: 16px 0;
+    } 
+
+    .menu.active{
+        left:0;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
 
 
 #bali{
@@ -120,11 +179,17 @@ h1{
     display: flex;
     background: url(img/bali.jpg);
     color: white;
-    position: relative;
+  /*   position: relative;
     height:50vw;
     align-items: center;
     justify-content: flex-start;
-    background-size: 100%;
+    background-size: 100%;*/
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    opacity: .7; 
+
 }
 
 #bali .card{
@@ -133,12 +198,12 @@ h1{
     flex-direction: column;
     align-items: center;
     background: #2b80b9;
-    width: 350px;
+    width: 50vh;
     margin-left: 20vh;
     margin-bottom: 10vh;
     border-radius: 5%;
-    min-height: 300px;
-    z-index: 1;
+    min-height: 20vh;
+    z-index: 2;
     font-family: 'RocknRoll One', sans-serif;
 }
 
@@ -170,7 +235,7 @@ svg{
 #name img{
     border-radius: 50%;
     width: 7vh;
-    margin-right: 1 vh;
+    margin-right: 1vh;
 }
 
 #name p{
@@ -187,12 +252,19 @@ svg{
 .card button{
     border-radius: 10px;
     background-color: #f2f7ba;
+    color:#0f5a8b;
     width: 17vh;
     min-height: 5vh;
     margin-bottom: 20px;
     border: 3px solid white;
     font-size: 1.2em;
-    
+    transition: 1s;
+}
+
+.card button:hover{
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
 }
 
 
@@ -201,6 +273,7 @@ svg{
 |||||||||||||||||||||||||||| B O D Y ||||||||||||||||||||||||
 /*|||||||||||||||||||||| L E F T  S I D E |||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
 
 
 #column-left{
@@ -292,6 +365,13 @@ h3:after {
     min-height: 7vh;
     margin: 10px;
     font-size: 1.2em;
+    transition: 1s;
+}
+
+.column-card1 button:hover{
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
 }
 
 
@@ -358,12 +438,20 @@ h3:after {
     min-height: 7vh;
     margin: 10px;
     font-size: 1.2em;
-    
+    transition: 1s;
+}
+
+.btn-left button:hover{
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
 }
 
 
 
-/*|||||||||||||||||||||||R I G H T   S I D E|||||||||||||||||||||*/
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||R I G H T   S I D E|||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
 
 
@@ -418,8 +506,14 @@ h5:after {
 .galarie img{
     width: 30vh;
     margin: 10px;
-
+    transition: 1s;
 }
+
+.galarie img:hover{
+    transition-duration: 1s 1s;
+    opacity: .7;
+}
+
 
 .gal-btn{
     color: #2b80b9;
@@ -431,7 +525,15 @@ h5:after {
     border: 0;
     margin: 10px;
     font-size: 1.2em;   
+    transition: 1s;
 }
+
+.gal-btn:hover{
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
+}
+
 
 .line{
     width: 80%;
@@ -444,6 +546,7 @@ h5:after {
 .emma{
     margin: 0%;
 }
+
 
 .face{
     display: flex;
@@ -462,7 +565,7 @@ h5:after {
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'RocknRoll One', sans-serif;
     font-size: 30px;
 }
 
@@ -499,7 +602,6 @@ h5:after {
 }
 
 
-
 #text{
     width: 70vh;
     text-align: center;
@@ -509,9 +611,24 @@ h5:after {
 .plane{
     grid-area: plane;
     background: url(img/plane.jpg);
-    color: white;
+    color: #2b80b9;
     background-size: 100%;
+    text-align: center;
+    font-size: 5vh;
+    font-family: 'RocknRoll One', sans-serif;
+    opacity: .8;
 }
+
+
+.plane svg{
+    fill: #2b80b9;
+}
+
+
+.plane h6{
+    margin: 1%;
+}
+
 
 .plane .line{
     width: 50vh;
@@ -520,17 +637,42 @@ h5:after {
 }
 
 
+.plane p{
+    font-size: 2.5vh;
+    color: white;
+}
+
+
 #company{
     grid-area: company;
     background: #2b80b9;
-    text-align-last: justify;
+    max-height: 70vw;
+   
+}
+
+.logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+
+@media all and (max-width:768px) {
+    .logos{
+        flex-direction: column;
+    }    
+    #company{
+    
+    }
 }
 
 
 #company img{
     width: 15vw;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 
@@ -540,10 +682,16 @@ footer{
     grid-area: footer;
     background: #f2f7ba; 
     color: #2b80b9;
-    
 }
+
 
 footer svg{
     fill: #2b80b9;
     width: 6vh;
+    transition: .5s;
+}
+
+footer svg:hover{
+    fill: white;
+    transition-duration: .5s .5s;
 }
