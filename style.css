@@ -1,0 +1,857 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 40vh 10vh 109vh auto 60vh 45vh 25vh;
+    grid-template-areas: "header header"
+        "navbar navbar"
+        "bali bali"
+        "populaire article"
+        "plane plane"
+        "company company"
+        "footer footer";
+}
+
+
+
+
+
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||N A V I G A T I O N|||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: navbar;
+    z-index: 1;
+}
+
+
+
+.photo {
+    display: flex;
+    background: url(img/beach.jpg);
+    background-position: center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+}
+
+.photo svg {
+    fill: white;
+    width: 70px;
+    font-size: 10vh;
+}
+
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 3rem;
+    z-index: 1;
+    font-family: 'RocknRoll One', sans-serif;
+
+}
+
+
+.photo p {
+    margin: 0%;
+    font-family: 'RocknRoll One', sans-serif;
+    text-align: center;
+    z-index: 1;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: beige;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+}
+
+
+nav ul {
+    list-style: none;    
+}
+
+
+nav li {
+    float: left;
+    color: black;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    width: 30vh;
+    display: flex;
+    text-align: center;
+    font-family: 'RocknRoll One', sans-serif;
+    color: #2b80b9;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin-left: 100px;
+    transition: 1s;
+}
+
+nav ul li a:hover {
+    color: #0f5a8b;
+    transition-duration: 0.5s .5s;
+    font-size: 19px;
+}
+
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+
+
+#hamburger{
+    display: none;
+}
+
+#navbarTitle{
+    display: none;
+}
+
+
+
+@media all and (max-width: 991px) {
+    #hamburger{
+        display: block;
+        color: #2b80b9;
+        text-align: left;
+        margin: 20px 20px;
+    }
+
+    #navbarTitle{
+        display: block;
+        margin: 20px 40px;
+    }
+
+    #hamburgerAndTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav h6{
+        margin: 0 auto;
+        margin-top: 23px;
+    }
+    
+    
+}
+
+
+
+#bali {
+    grid-area: bali;
+    display: flex;
+    background: url(img/bali.jpg);
+    color: white;
+    /*   position: relative;
+    height:50vw;
+    align-items: center;
+    justify-content: flex-start;
+    background-size: 100%;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    opacity: .7;
+
+}
+
+#bali .card {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    align-items: center;
+    background: #2b80b9;
+    width: 50vh;
+    margin-left: 20vh;
+    margin-bottom: 10vh;
+    border-radius: 5%;
+    min-height: 20vh;
+    z-index: 2;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+
+#bali h2 {
+    font-size: 3rem;
+    margin: 10px;
+}
+
+svg {
+    width: 8vh;
+    fill: white;
+    margin: 5px;
+}
+
+#cardtext {
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#name {
+    width: 20vh;
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+#name img {
+    border-radius: 50%;
+    width: 7vh;
+    margin-right: 1vh;
+}
+
+#name p {
+    margin-bottom: 0px;
+}
+
+.photo2 img {
+    border-radius: 50%;
+    width: 5vh;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.card button {
+    border-radius: 10px;
+    background-color: #f2f7ba;
+    color: #0f5a8b;
+    width: 17vh;
+    min-height: 5vh;
+    margin-bottom: 20px;
+    border: 3px solid white;
+    font-size: 1.2em;
+    transition: 1s;
+}
+
+.card button:hover {
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
+}
+
+
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||||||| B O D Y ||||||||||||||||||||||||
+/*|||||||||||||||||||||| L E F T  S I D E |||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+
+
+#column-left {
+    grid-area: populaire;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background: #2b80b9;
+    min-height: 100px;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+
+h3 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 30px;
+}
+
+
+h3:after {
+    display: block;
+    height: 2px;
+    background-color: #f2f7ba;
+    width: 250px;
+    content: " ";
+    margin-top: 10px;
+}
+
+
+.column-card1 {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 500px;
+    height: fit-content;
+    border: 2px solid #f2f7ba;
+    box-shadow: #f2f7ba 5px 5px;
+    border-radius: 20px;
+    color: white;
+    margin: 10px;
+}
+
+
+.pain {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+    color: white;
+}
+
+.column-card1 svg {
+    width: 3vh;
+    fill: white;
+    margin: 5px;
+}
+
+
+.steven img {
+    width: 5vh;
+    border-radius: 50%;
+}
+
+
+.image2 img {
+    width: 30vh;
+    border: 5px solid white;
+}
+
+
+.column-card1 button {
+    width: 17vh;
+    height: 10px;
+    align-self: center;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: #f2f7ba;
+    border: 3px solid white;
+    color: #2b80b9;
+    min-height: 7vh;
+    margin: 10px;
+    font-size: 1.2em;
+    transition: 1s;
+}
+
+.column-card1 button:hover {
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
+}
+
+
+.column-card2 {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 400px;
+    height: fit-content;
+    border: 2px solid #f2f7ba;
+    box-shadow: #f2f7ba 5px 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+
+.column-card3 {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 400px;
+    height: fit-content;
+    border: 2px solid #f2f7ba;
+    box-shadow: #f2f7ba 5px 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+
+.column-card4 {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 400px;
+    height: fit-content;
+    border: 2px solid #f2f7ba;
+    box-shadow: #f2f7ba 5px 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+.column-card5 {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 400px;
+    height: fit-content;
+    border: 2px solid #f2f7ba;
+    box-shadow: #f2f7ba 5px 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+
+.btn-left button {
+    width: 30 vh;
+    height: 10px;
+    align-self: center;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: #f2f7ba;
+    border: 3px solid white;
+    color: #2b80b9;
+    min-height: 7vh;
+    margin: 10px;
+    font-size: 1.2em;
+    transition: 1s;
+}
+
+.btn-left button:hover {
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
+}
+
+
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||||||||||||||||R I G H T   S I D E|||||||||||||||||||||
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+
+
+
+#column-right {
+    grid-area: article;
+    text-align: center;
+    width: 100%;
+    background: white;
+    min-height: 100px;
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+
+.recents svg {
+    width: 8vh;
+    margin-top: 20px;
+    fill: #2b80b9;
+    margin: 5px;
+}
+
+h5 {
+    color: #2b80b9;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 30px;
+}
+
+
+h5:after {
+    display: block;
+    height: 2px;
+    background-color: #f2f7ba;
+    width: 250px;
+    content: " ";
+    margin-top: 10px;
+}
+
+
+.galarie {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin: 10px;
+}
+
+
+
+
+.galarie img {
+    width: 30vh;
+    margin: 10px;
+    transition: 1s;
+}
+
+.galarie img:hover {
+    transition-duration: 1s 1s;
+    opacity: .7;
+}
+
+
+.gal-btn {
+    color: #2b80b9;
+    width: 25vh;
+    height: 5vh;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: #f2f7ba;
+    border: 0;
+    margin: 10px;
+    font-size: 1.2em;
+    transition: 1s;
+}
+
+.gal-btn:hover {
+    transition-duration: 1s 1s;
+    background-color: #2b80b9;
+    color: #f2f7ba;
+}
+
+
+.line {
+    width: 80%;
+    height: 5px;
+    border: 0;
+    background-color: #2b80b9;
+}
+
+
+.emma {
+    margin: 0%;
+}
+
+
+.face {
+    display: flex;
+    justify-content: center;
+    margin-top: -6%;
+    color: black;
+    width: 100%;
+}
+
+
+.emma h6 {
+    color: #2b80b9;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 30px;
+}
+
+
+.emma h6:after {
+    display: block;
+    height: 2px;
+    background-color: #f2f7ba;
+    width: 250px;
+    content: " ";
+    margin-top: 10px;
+}
+
+.face img {
+    border-radius: 50%;
+    width: 5vh;
+}
+
+.face svg {
+    fill: #2b80b9;
+    width: 4vh;
+    margin-left: 50px;
+}
+
+.city {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city img {
+    width: 60vh;
+    border: 5px solid #f2f7ba;
+}
+
+
+
+
+
+.plane {
+    grid-area: plane;
+    background: url(img/plane.jpg);
+    color: #2b80b9;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    font-size: 5vh;
+    font-family: 'RocknRoll One', sans-serif;
+    opacity: .8;
+}
+
+
+
+.plane svg {
+    fill: #2b80b9;
+}
+
+
+.plane h6 {
+    margin: 1%;
+}
+
+
+.plane .line {
+    width: 50vh;
+    height: 4px;
+    background-color: #f2f7ba;
+}
+
+
+.plane p {
+    font-size: 2.5vh;
+    color: white;
+}
+
+
+#company {
+    grid-area: company;
+    background: #2b80b9;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+
+
+#company img {
+    width: 15vw;
+    margin-left: 100px;
+    margin-right: 100px;
+    transition: 0.8s;
+}
+
+
+#company img:hover{
+    width: 17vw;
+    transition-duration: 0.8s 0.8s;
+}
+
+
+footer {
+    font-size: 3vh;
+    text-align: center;
+    grid-area: footer;
+    background: #f2f7ba;
+    color: #2b80b9;
+}
+
+
+footer svg {
+    fill: #2b80b9;
+    width: 6vh;
+    transition: .5s;
+}
+
+footer svg:hover {
+    fill: white;
+    transition-duration: .5s .5s;
+}
+
+
+
+@media all and (max-width:1400px) {
+    .galarie {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media all and (min-width:768px) and (max-width:1098px) {
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40vh 90vh auto 60vh 45vh 25vh;
+        grid-template-areas: "header header"
+            "bali bali"
+            "populaire article"
+            "plane plane"
+            "company company"
+            "footer footer";
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: fit-content;
+    }
+
+    nav ul{
+        flex-direction: row;
+        display: flex;
+    }
+
+    .city img {
+        width: 40vw;
+    }
+
+
+        #text {
+            width: 40vw;
+            height: 20vh;
+            text-align: center;
+        }
+
+        .galarie {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #company {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+
+
+    
+            #hamburger{
+                display: block;
+                color: #2b80b9;
+                text-align: left;
+                margin: 20px 20px;
+            }
+        
+            #navbarTitle{
+                display: block;
+                margin: 20px 40px;
+                color: #2b80b9;
+                font-family: 'RocknRoll One', sans-serif;
+            }
+            
+            #navbarTitle svg{
+                fill: #2b80b9;
+                font-family: 'RocknRoll One', sans-serif;
+                align-self: flex-start;
+            }
+
+            #hamburgerAndTitle{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+
+@media all and (max-width:767px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30vh 109vh auto auto 60vh 100vh 30vh;
+        grid-template-areas: 
+            "header"
+            "bali "
+            "article"
+            "populaire"
+            "plane"
+            "company"
+            "footer";
+    }
+
+
+    #company {
+        flex-direction: column;
+    }
+
+    #company img{
+        width: 25vw;
+    }
+
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: fit-content;
+      }
+    
+        #navbarTitle svg{
+        fill: #2b80b9;
+        font-family: 'RocknRoll One', sans-serif;
+    }
+
+    nav h2{
+        color: #2b80b9;
+    }
+    
+
+
+    #hamburger{
+        display: block;
+        color: #2b80b9;
+        text-align: left;
+        margin: 20px 20px;
+    }
+    
+    
+    .city img {
+        width: 80vw;
+    }
+
+
+    #text {
+        width: 90vw;
+        height: 20vh;
+        text-align: center;
+    }
+
+    .column-card1{
+        width: 85vw;
+    }
+    #company img{
+        width: 50vw;
+    }
+
+    #company img:hover{
+        width: 55vw;
+    }
+
+}
